@@ -15,9 +15,14 @@ var redis = require('redis');
 var socketioRedis = require('socket.io-redis');
 //var adapter = socketioRedis();
 
-var client = redis.createClient({ host: 'chat-redis.h4wjgc.0001.use1.cache.amazonaws.com', port: 6379 });
-var adapter = socketioRedis({ host: 'chat-redis.h4wjgc.0001.use1.cache.amazonaws.com', port: 6379 });
+//var client = redis.createClient({ host: 'chat-redis.h4wjgc.0001.use1.cache.amazonaws.com', port: 6379 });
+//var adapter = socketioRedis({ host: 'chat-redis.h4wjgc.0001.use1.cache.amazonaws.com', port: 6379 });
 //io.adapter(socketioRedis({ host: 'chat-redis.h4wjgc.0001.use1.cache.amazonaws.com', port: 6379 }));
+
+//localhost
+var client = redis.createClient({ host: 'localhost', port: 6379 });
+var adapter = socketioRedis({ host: 'localhost', port: 6379 });
+
 io.adapter(adapter);
 
 adapter.subClient.on("subscribe", function (channel, count) {

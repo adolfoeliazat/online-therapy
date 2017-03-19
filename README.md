@@ -21,5 +21,8 @@
   - redis-cli ping --> will print PONG
 - go to main project folder
 - start the app -> npm start
+- or install pm2 to run the application in background
+  - sudo npm install pm2@latest -g
+  - PORT=8080 pm2 start bin/www --name "online-therapy"
 - default port is 3000
 - open it in browser your_local_private_ip:port ex. 192.168.77.77:3000
